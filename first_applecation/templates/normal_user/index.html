@@ -5,12 +5,19 @@
     <title>first page</title>
 </head>
 <body>
-    <div style="align-items: center; margin: 200px">
-        <form style="background-color: aqua">
-            <label for="name">here we are lool</label>
-                <input type="text" placeholder="here">
+<div style="align-items: center; margin: 200px">
+    {% if question_list %}
+        <ul>
+            {% for question in question_list %}
+                <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>No qou in the database</h2>
+    {% endif %}
 
-        </form>
-    </div>
+</div>
 </body>
 </html>
+
+
