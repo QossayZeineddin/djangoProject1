@@ -2,12 +2,10 @@ from django.http import HttpResponse, Http404,HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views import generic
-
 from first_applecation.models import Question,Choice
 
 
 # Create your views here.
-
 # ////////// V 2 //////////////////
 
 class IndexView(generic.ListView):
